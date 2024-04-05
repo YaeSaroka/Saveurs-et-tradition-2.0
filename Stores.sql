@@ -140,7 +140,7 @@ BEGIN
 END
 GO
 
-ALTER PROCEDURE AgregarReceta
+CREATE PROCEDURE AgregarReceta
 	-- Add the parameters for the stored procedure here
 	@IdCategoria INT, @Imagen varchar(500), @Titulo varchar(150), @Descripcion varchar(150),@Pasos varchar(5000),@CantidadPersonas INT,@Tiempo INT,@Precio INT,@Video varchar(650),@Ingrediente varchar(max), @Cantidad varchar(max)
 AS
@@ -150,6 +150,22 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE ObtenerUltimaReceta
+AS
+BEGIN
+	select max(IdReceta) as IdReceta from Receta
+END
+GO
+
+CREATE PROCEDURE AgregarIngrediente
+	-- Add the parameters for the stored procedure here
+	@IdReceta INT, @IdIngrediente INT, @Cantidad varchar(650)
+AS
+BEGIN
+	insert into RecetaxIngrediente (IdReceta, IdIngrediente, Cantidad)
+	values( @IdReceta, @IdIngrediente, @Cantidad);
+END
+GO
 
 CREATE PROCEDURE IngredientesModal
 	@IdReceta INT

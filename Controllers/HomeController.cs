@@ -174,11 +174,20 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult GuardarReceta(Receta recetas)
     {
+        int id_ult_receta;        
         /*BD.AgregarReceta(recetas);
         return RedirectToAction("Listado_Recetas",new{IdCategoria=recetas.IdCategoria});*/
         try
         {
             BD.AgregarReceta(recetas);
+            id_ult_receta= BD.ObtenerUltimaReceta();
+            BD.AgregarIngrediente(id_ult_receta, recetas.IdIngrediente1, recetas.IdIngrediente2, recetas.IdIngrediente3, recetas.IdIngrediente4, recetas.Cantidad1, recetas.Cantidad2, recetas.Cantidad3, recetas.Cantidad4);
+            
+            Array ingrediente: cantidad
+            foreach (var key in arr)
+            {
+                    BD.AgregarIngrediente(id_ult_receta, key, key.value);
+            }
             return Json(new { success = true, IdCategoria = recetas.IdCategoria });
         }
         catch (Exception ex)

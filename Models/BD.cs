@@ -193,6 +193,16 @@ public static class BD
             db.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
         }
     }
+    public static int ObtenerUltimaReceta()
+    {   
+        int ultidreceta=-1;
+        using(SqlConnection db = new SqlConnection(ConnectionString)){
+            string sp = "ObtenerUltimaReceta";
+            ultidreceta = db.Execute(sp,commandType: CommandType.StoredProcedure);
+        }
+        return ultidreceta;
+    }
+
 
     /*A CHEQUEAR*/
        /*public static void AgregarIngrediente(string pNombre_Ingrediente, string pCantidad)
