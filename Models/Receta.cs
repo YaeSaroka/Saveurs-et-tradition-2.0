@@ -16,16 +16,16 @@ public class Receta{
 
 
 // LISTAS
-    public string IdIngrediente1{get;set;}
+    public int IdIngrediente1{get;set;}
     public string Cantidad1{get;set;}
 
-    public string IdIngrediente2{get;set;}
+    public int IdIngrediente2{get;set;}
     public string Cantidad2{get;set;}
 
-    public string IdIngrediente3{get;set;}
+    public int IdIngrediente3{get;set;}
     public string Cantidad3{get;set;}
 
-    public string IdIngrediente4{get;set;}
+    public int IdIngrediente4{get;set;}
     public string Cantidad4{get;set;}
 
     

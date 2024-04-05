@@ -189,7 +189,17 @@ public static class BD
     {   
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "AgregarReceta";
-            var parameters = new { Titulo=recetas.Titulo, Descripcion=recetas.Descripcion, Pasos=recetas.Pasos, CantidadPersonas=recetas.CantidadPersonas, Precio=recetas.Precio, Tiempo=recetas.Tiempo, Video=recetas.Video,  Imagen=recetas.Imagen,  IdCategoria=recetas.IdCategoria, IdUsuario=recetas.IdUsuario, Ingredientes=recetas.Ingredientes};
+            var parameters = new { Imagen=recetas.Imagen,  
+                                    Titulo=recetas.Titulo, 
+                                    Descripcion=recetas.Descripcion, 
+                                    Pasos=recetas.Pasos, 
+                                    CantidadPersonas=recetas.CantidadPersonas, 
+                                    Precio=recetas.Precio, 
+                                    Tiempo=recetas.Tiempo, 
+                                    Video=recetas.Video,  
+                                    
+                                    IdCategoria=recetas.IdCategoria, 
+                                    IdUsuario=recetas.IdUsuario};
             db.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
         }
     }
@@ -198,20 +208,20 @@ public static class BD
         int ultidreceta=-1;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "ObtenerUltimaReceta";
-            ultidreceta = db.Execute(sp,commandType: CommandType.StoredProcedure);
+            ultidreceta = db.QueryFirstOrDefault<int>(sp,commandType: CommandType.StoredProcedure);
         }
         return ultidreceta;
     }
 
 
     /*A CHEQUEAR*/
-       /*public static void AgregarIngrediente(string pNombre_Ingrediente, string pCantidad)
+    public static void AgregarIngrediente(int IdReceta, int idIngrediente, string Cantidad)
     {   
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "AgregarIngrediente";
-            var parameters = new {Nombre_Ingrediente=pNombre_Ingrediente.Nombre_Ingrediente, Cantidad=Cantidad.Cantidad};
+            var parameters = new {IdReceta, idIngrediente, Cantidad};
             db.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
         }
-    }*/
+    }
 
 }

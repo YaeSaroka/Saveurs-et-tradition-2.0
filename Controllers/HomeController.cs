@@ -179,15 +179,26 @@ public class HomeController : Controller
         return RedirectToAction("Listado_Recetas",new{IdCategoria=recetas.IdCategoria});*/
         try
         {
+            recetas.IdCategoria = 1;
+            recetas.IdUsuario = 1;
             BD.AgregarReceta(recetas);
             id_ult_receta= BD.ObtenerUltimaReceta();
-            BD.AgregarIngrediente(id_ult_receta, recetas.IdIngrediente1, recetas.IdIngrediente2, recetas.IdIngrediente3, recetas.IdIngrediente4, recetas.Cantidad1, recetas.Cantidad2, recetas.Cantidad3, recetas.Cantidad4);
-            
-            Array ingrediente: cantidad
-            foreach (var key in arr)
+
+            // Agrego los ingredientes a una lista
+            Dictionary<int,string> ingredientes =new Dictionary<int, string>();
+            if (recetas.IdIngrediente1 != 0) ingredientes.Add(recetas.IdIngrediente1, recetas.Cantidad1);
+            if (recetas.IdIngrediente2 != 0) ingredientes.Add(recetas.IdIngrediente2, recetas.Cantidad2);
+            if (recetas.IdIngrediente3 != 0) ingredientes.Add(recetas.IdIngrediente3, recetas.Cantidad3);
+           // if (recetas.IdIngrediente4 != null) ingredientes.Add(recetas.IdIngrediente4, recetas.Cantidad4);
+
+            foreach(int clave in ingredientes.Keys)
             {
-                    BD.AgregarIngrediente(id_ult_receta, key, key.value);
+                BD.AgregarIngrediente(id_ult_receta,clave,ingredientes[clave]);
             }
+            //SACAR DE TABLA RECETA EL CAMPO RECETAXINGREDIENTE
+            //VER HARDCODEO DE USUARIO Y CATEGORIA EN RECETA ESTA ACA ARRIBAAA
+            
+            
             return Json(new { success = true, IdCategoria = recetas.IdCategoria });
         }
         catch (Exception ex)
