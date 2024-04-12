@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Integrador")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b57a546421382cac10eb2da7cd87e0b6e28319f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b19a7dd055464ceb86bf02f3efe09ae63fbb6aa6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Integrador")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Integrador")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

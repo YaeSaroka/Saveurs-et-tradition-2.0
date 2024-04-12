@@ -26,7 +26,7 @@ public class HomeController : Controller
         }
         if (showAlert_cuenta)
         {
-            ViewBag.AlertMessage_Desinicio = "Desinicio de cuneta exitoso !";
+            ViewBag.AlertMessage_Desinicio = "Desinicio de cuenta exitoso !";
         }
     return View();
     }
