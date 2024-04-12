@@ -15,13 +15,23 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index(int IdUsuario)
+    public IActionResult Index(int IdUsuario,bool showAlert, bool showAlert_cuenta )
     {
         ViewBag.RecetasCarrusel = BD.CargarRecetasCarrousel();
         ViewBag.Card_principal = BD.CargarCategoriaCard();
         ViewBag.user_= BD.CargarInfoUsuario(IdUsuario);
-        return View();
+        if (showAlert)
+        {
+            ViewBag.AlertMessage = "Usted no es Administrador";
+        }
+        if (showAlert_cuenta)
+        {
+            ViewBag.AlertMessage_Desinicio = "Desinicio de cuneta exitoso !";
+        }
+    return View();
     }
+
+
     public IActionResult AgregarIng()
     {
         return View();
@@ -179,8 +189,6 @@ public class HomeController : Controller
         return RedirectToAction("Listado_Recetas",new{IdCategoria=recetas.IdCategoria});*/
         try
         {
-            recetas.IdCategoria = 1;
-            recetas.IdUsuario = 1;
             BD.AgregarReceta(recetas);
             id_ult_receta= BD.ObtenerUltimaReceta();
 
@@ -195,10 +203,6 @@ public class HomeController : Controller
             {
                 BD.AgregarIngrediente(id_ult_receta,clave,ingredientes[clave]);
             }
-            //SACAR DE TABLA RECETA EL CAMPO RECETAXINGREDIENTE
-            //VER HARDCODEO DE USUARIO Y CATEGORIA EN RECETA ESTA ACA ARRIBAAA
-            
-            
             return Json(new { success = true, IdCategoria = recetas.IdCategoria });
         }
         catch (Exception ex)
@@ -224,7 +228,48 @@ public class HomeController : Controller
         }
     }
 
+    public IActionResult AgarrarUsuario(int IdUsuario)
+    {
+        ViewBag.user_= BD.CargarInfoUsuario(IdUsuario);
+        ViewBag.IdUsuario = BD.user.IdUsuario;
+         return View("AgregarReceta");
+    }
 
 
+    public IActionResult AgregarIngredienteAdmin()
+    {
+          if (BD.user == null){
+             return RedirectToAction("RegistrarView");
+        }
+         else if (BD.user.IdUsuario != 1) 
+        {
+            return RedirectToAction("Index", new { showAlert = true });
+        }
+        
+        else
+        {
+            ViewBag.IdUsuario = BD.user.IdUsuario;
+            
+            return View("AgregarIngredientesAdmin");
+    }
+    }
 
+    public IActionResult EstadoCuenta(){
+        if (BD.user == null){
+             return RedirectToAction("RegistrarView");
+        }
+        else  
+        {
+            BD.user = null;
+            return RedirectToAction("Index", new { showAlert_cuenta = true });
+        }
+    }
+
+ [HttpPost]
+public IActionResult GuardarIngredienteAdmin(string Nombre_Ingrediente)
+    {
+        BD.AgregarIngredienteAdmin(Nombre_Ingrediente);
+        return RedirectToAction("Index");
+    }
 }
+ 

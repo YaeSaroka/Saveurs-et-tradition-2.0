@@ -30,7 +30,15 @@
         content: '\203A'; /* Use the Unicode character for right-pointing arrow (›) */
     }
 </style>
-          
+
+@if (ViewBag.AlertMessage != null)
+{
+    <script>alert('@ViewBag.AlertMessage');</script>
+}
+@if (ViewBag.AlertMessage_Desinicio != null)
+{
+    <script>alert('@ViewBag.AlertMessage_Desinicio');</script>
+}
 <div class="container carousel-container">
     <div id="carouselExampleAutoplaying" class="carousel slide carousel-fotos" data-bs-ride="carousel">
         <div class="carousel-inner" style="text-align: center; width: 100%;">

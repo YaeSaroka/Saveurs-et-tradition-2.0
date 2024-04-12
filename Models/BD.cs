@@ -196,7 +196,7 @@ public static class BD
                                     CantidadPersonas=recetas.CantidadPersonas, 
                                     Precio=recetas.Precio, 
                                     Tiempo=recetas.Tiempo, 
-                                    Video=recetas.Video,  
+                                    Video=recetas.Video,
                                     
                                     IdCategoria=recetas.IdCategoria, 
                                     IdUsuario=recetas.IdUsuario};
@@ -221,6 +221,16 @@ public static class BD
             string sp = "AgregarIngrediente";
             var parameters = new {IdReceta, idIngrediente, Cantidad};
             db.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
+        }
+    }
+
+    public static void AgregarIngredienteAdmin(string Nombre_Ingrediente)
+    {   
+        using(SqlConnection db = new SqlConnection(ConnectionString)){
+            string sp = "AgregarIngredienteAdmin";
+            var parameters = new {Nombre_Ingrediente};
+            db.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
+
         }
     }
 

@@ -4,12 +4,22 @@
 <section style="background-color: #f7e7d9;">
    <img class="banner"src="/Img/Banner/@ViewBag.obj.Banner" alt="jjj">
 
-<a href='@Url.Action("AgregarReceta",new{IdCategoria=@ViewBag.obj.IdCategoria})'>    <!-- se manda la lista, debe mandar sel objeto -->
+
+<a href='@Url.Action("AgregarIngredienteAdmin")'>   
+    <div class="sticky-button2">
+        Agregá Nuevos Ingredientes!
+        <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+    </div>
+</a>
+
+<a href='@Url.Action("AgregarReceta",new{IdCategoria=@ViewBag.obj.IdCategoria})'>   
     <div class="sticky-button">
         Agregá Tu Receta!
         <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
     </div>
 </a>
+
+
 
 <div class="cat">
     @foreach (Receta item in ViewBag.list_receta)

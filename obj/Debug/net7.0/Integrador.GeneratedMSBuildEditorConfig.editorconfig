@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Integrador
 build_property.RootNamespace = Integrador
 build_property.ProjectDir = Z:\ORT 2024\PF\Saveurs-et-tradition-main\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -18,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 
 [Z:/ORT 2024/PF/Saveurs-et-tradition-main/Views/Home/AgregarIng.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FySW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/ORT 2024/PF/Saveurs-et-tradition-main/Views/Home/AgregarIngredientesAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FySW5ncmVkaWVudGVzQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [Z:/ORT 2024/PF/Saveurs-et-tradition-main/Views/Home/AgregarReceta.cshtml]

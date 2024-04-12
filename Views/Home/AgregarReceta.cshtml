@@ -28,7 +28,9 @@
                     <div class="contact">
                         <div>
                             <h3>AGREGÁ TU RECETA</h3>
-                            <form name="guardarReceta" id="guardarReceta" action="#" class="wizard-big" autocomplete="off">
+                            <form name="guardarReceta" id="guardarReceta" action="#" class="wizard-big" autocomplete="off" >
+                                <input type="hidden" name="IdCategoria" value="@ViewBag.IdCategoria">
+                                <input type="hidden" name="IdUsuario" value="@ViewBag.IdUsuario"><b></b>
                                 <input id="IdIngrediente1" name="IdIngrediente1" type="hidden">
                                 <input id="IdIngrediente2" name="IdIngrediente2" type="hidden">
                                 <input id="IdIngrediente3" name="IdIngrediente3" type="hidden">

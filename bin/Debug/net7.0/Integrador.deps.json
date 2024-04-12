@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Integrador/1.0.0": {
         "dependencies": {
-          "Dapper": "2.1.35",
+          "Dapper": "2.1.42",
           "Newtonsoft.Json": "13.0.3",
           "System.Data.SqlClient": "4.8.6"
         },
@@ -16,11 +16,11 @@
           "Integrador.dll": {}
         }
       },
-      "Dapper/2.1.35": {
+      "Dapper/2.1.42": {
         "runtime": {
           "lib/net7.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.1.35.13827"
+            "fileVersion": "2.1.42.64156"
           }
         }
       },
@@ -115,12 +115,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Dapper/2.1.35": {
+    "Dapper/2.1.42": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YKRwjVfrG7GYOovlGyQoMvr1/IJdn+7QzNXJxyMh0YfFF5yvDmTYaJOVYWsckreNjGsGSEtrMTpnzxTUq/tZQw==",
-      "path": "dapper/2.1.35",
-      "hashPath": "dapper.2.1.35.nupkg.sha512"
+      "sha512": "sha512-TbG2vxnVMSjVLj+OCeZQTVJWe4l41noZti1JhwUKd9E+s7nXQacxZKpOm4X0otHeTkqpvKXl4TEx5e8jHWbyeA==",
+      "path": "dapper/2.1.42",
+      "hashPath": "dapper.2.1.42.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

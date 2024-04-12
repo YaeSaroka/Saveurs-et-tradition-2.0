@@ -140,13 +140,23 @@ BEGIN
 END
 GO
 
-ALTER PROCEDURE AgregarReceta
+CREATE PROCEDURE AgregarReceta
 	-- Add the parameters for the stored procedure here
 	@IdCategoria INT, @Imagen varchar(500), @Titulo varchar(150), @Descripcion varchar(150),@Pasos varchar(5000),@CantidadPersonas INT,@Tiempo INT,@Precio INT,@Video varchar(650),@IdUsuario int
 AS
 BEGIN
 	INSERT INTO Receta (Imagen, Titulo, Descripcion, Pasos, CantidadPersonas, Tiempo, Precio, Video, IdCategoria,IdUsuario)
 	VALUES (@Imagen, @Titulo, @Descripcion, @Pasos, @CantidadPersonas, @Tiempo, @Precio, @Video, @IdCategoria, @IdUsuario)
+END
+GO
+
+CREATE PROCEDURE AgregarIngredienteAdmin
+	-- Add the parameters for the stored procedure here
+	@Nombre_Ingrediente varchar(650)
+AS
+BEGIN
+	INSERT INTO Ingrediente(Nombre_Ingrediente)
+	VALUES (@Nombre_Ingrediente)
 END
 GO
 
@@ -189,7 +199,7 @@ BEGIN
 END
 GO
 
-ALTER PROCEDURE UnIngrediente
+CREATE PROCEDURE UnIngrediente
 @Searching varchar(150)
 AS
 BEGIN 

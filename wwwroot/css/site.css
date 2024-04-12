@@ -164,6 +164,24 @@ margin-bottom: 50px;
     animation: blink 1s infinite alternate; /* Animación de parpadeo */
 }
 
+.sticky-button2 {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  width: 100px; /* Ajusta el ancho según sea necesario */
+  height: 100px; /* Ajusta la altura según sea necesario */
+  background-color: #30833b;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+  animation: blink 1s infinite alternate; /* Animación de parpadeo */
+}
+
 @keyframes blink {
     0% {
         opacity: 1;
@@ -262,4 +280,13 @@ margin-bottom: 50px;
   .recipe-card__ingredients {
     column-count: 2;
   }
+}
+
+
+#Estado_Cuenta{
+  font-size: 20px;
+  font-weight: bold;
+  color:rgb(163, 92, 0);
+  padding: 20px;
+  text-decoration: none;
 }

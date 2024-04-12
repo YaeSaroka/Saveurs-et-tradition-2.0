@@ -151,9 +151,10 @@ Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\staticwebassets.develo
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\scopedcss\bundle\Integrador.styles.css
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\scopedcss\projectbundle\Integrador.bundle.scp.css
-Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\Integrador.csproj.CopyComplete
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\Integrador.dll
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\refint\Integrador.dll
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\Integrador.pdb
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\Integrador.genruntimeconfig.cache
 Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\ref\Integrador.dll
+Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\Integrador.sourcelink.json
+Z:\ORT 2024\PF\Saveurs-et-tradition-main\obj\Debug\net7.0\Integrador.csproj.Up2Date
